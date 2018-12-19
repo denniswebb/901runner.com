@@ -5,15 +5,15 @@ languageCode = "en-us"
 theme = "minimal"
 title = "901 Runner"
 [[menu.icon]]
-name = "strava"
+name = "fab fa-strava"
 url = "https://www.strava.com/athletes/denniswebb"
 weight = 3
 [[menu.icon]]
-name = "instagram"
+name = "fab fa-instagram"
 url = "https://www.instagram.com/901runner/"
 weight = 2
 [[menu.icon]]
-name = "envelope-o"
+name = "fas fa-at"
 url = "mailto:dhwebb@gmail.com"
 weight = 1
 [[menu.main]]
