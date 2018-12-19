@@ -26,6 +26,14 @@ table td, th {
     padding: 8px;
 }
 
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: green;
+    color: white;
+}
+
 tr:nth-child(even){
     background-color: #f2f2f2;
 }
