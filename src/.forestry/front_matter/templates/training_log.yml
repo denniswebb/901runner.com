@@ -1,0 +1,12 @@
+---
+label: training_log
+hide_body: false
+is_partial: false
+fields:
+- type: textarea
+  name: mystuff
+  label: MyStuff
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
