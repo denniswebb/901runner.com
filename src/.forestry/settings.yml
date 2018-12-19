@@ -4,9 +4,11 @@ auto_deploy: true
 admin_path: ''
 webhook_url: 
 sections:
-- type: document
-  path: log
+- type: directory
+  path: src/content/log
   label: Training Log
+  create: all
+  match: "**/*"
 - type: directory
   path: src/content
   label: Pages
