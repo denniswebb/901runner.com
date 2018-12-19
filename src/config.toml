@@ -1,44 +1,37 @@
 baseURL = "http://901runner.com"
-languageCode = "en-us"
-title = "901 Runner"
-theme = "minimal"
-googleAnalytics = "UA-111788534-2"
 enableEmoji = true
-
+googleAnalytics = "UA-111788534-2"
+languageCode = "en-us"
+theme = "minimal"
+title = "901 Runner"
+[[menu.icon]]
+name = "strava"
+url = "https://www.strava.com/athletes/denniswebb"
+weight = 3
+[[menu.icon]]
+name = "instagram"
+url = "https://www.instagram.com/901runner/"
+weight = 2
+[[menu.icon]]
+name = "envelope-o"
+url = "mailto:dhwebb@gmail.com"
+weight = 1
+[[menu.main]]
+name = "Posts"
+url = "/post/"
+weight = 3
+[[menu.main]]
+name = "Training Log"
+url = "/log/"
+weight = 2
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 [params]
-    author = "Dennis Webb"
-    githubUsername = "denniswebb"
-    accent = "green"
-    showBorder = true
-    backgroundColor = "white"
-    font = "Rubik"
-
-[[menu.main]]
-    url = "/"
-    name = "Home"
-    weight = 1
-
-[[menu.main]]
-    url = "/log/"
-    name = "Training Log"
-    weight = 2
-
-[[menu.main]]
-    url = "/post/"
-    name = "Posts"
-    weight = 3
-
-[[menu.icon]]
-    url = "mailto:dhwebb@gmail.com"
-    name = "envelope-o"
-    weight = 1
-
-[[menu.icon]]
-    url = "https://www.instagram.com/901runner/"
-    name = "instagram"
-    weight = 2
-
-[[menu.icon]]
-    url = "https://www.strava.com/athletes/denniswebb"
-    name = "strava"
-    weight = 3
+accent = "green"
+author = "Dennis Webb"
+backgroundColor = "white"
+font = "Rubik"
+githubUsername = "denniswebb"
+showBorder = true
