@@ -7,7 +7,6 @@ sections:
 - type: document
   path: log
   label: Training Log
-  match: "**/*"
 - type: directory
   path: src/content
   label: Pages
