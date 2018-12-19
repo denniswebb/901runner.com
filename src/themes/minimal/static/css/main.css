@@ -18,11 +18,12 @@ main {
 
 table {
     border-collapse:collapse;
-    border:1px solid #FF0000;
+    border:1px solid #757575;
 }
 
 table td {
-    border:1px solid #FF0000;
+    border:1px solid #757575;
+    padding: 10px;
 }
 
 /*footer*/
