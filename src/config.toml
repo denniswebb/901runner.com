@@ -1,0 +1,44 @@
+baseURL = "http://901runner.com"
+languageCode = "en-us"
+title = "901 Runner"
+theme = "minimal"
+googleAnalytics = "UA-111788534-2"
+enableEmoji = true
+
+[params]
+    author = "Dennis Webb"
+    githubUsername = "denniswebb"
+    accent = "green"
+    showBorder = true
+    backgroundColor = "white"
+    font = "Rubik"
+
+[[menu.main]]
+    url = "/"
+    name = "Home"
+    weight = 1
+
+[[menu.main]]
+    url = "/log/"
+    name = "Training Log"
+    weight = 2
+
+[[menu.main]]
+    url = "/post/"
+    name = "Posts"
+    weight = 3
+
+[[menu.icon]]
+    url = "mailto:dhwebb@gmail.com"
+    name = "envelope-o"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://www.instagram.com/901runner/"
+    name = "instagram"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://www.strava.com/athletes/denniswebb"
+    name = "strava"
+    weight = 3

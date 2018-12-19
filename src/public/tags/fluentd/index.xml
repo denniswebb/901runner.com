@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fluentd on Dennis Webb</title>
+    <link>http://denniswebb.info/tags/fluentd/index.xml</link>
+    <description>Recent content in Fluentd on Dennis Webb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://denniswebb.info/tags/fluentd/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Kubernets Pod Logs to Elasticsearch</title>
+      <link>http://denniswebb.info/snippet/k8s-pod-logs-to-es/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://denniswebb.info/snippet/k8s-pod-logs-to-es/</guid>
+      <description>&lt;p&gt;While troubleshooting why some pod logs weren&amp;rsquo;t being pushed to Elasticsearch
+by Fluentd on our clusters.  I suspected that the format of the logs
+themselves were the issue.  After a bit of work I came up with this solution:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubectl logs &amp;lt;PODNAME&amp;gt; | jq -c &#39;. | {&amp;quot;index&amp;quot;: {}}, .&#39; | curl https://&amp;lt;ELASTICSEARCH_ADDRESS&amp;gt;/&amp;lt;INDEX&amp;gt;/&amp;lt;TYPE&amp;gt;/_bulk --data-bin @-
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Below is a sample response from sending the last 5 log messages from a pod:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;kubectl logs nginx-2450266744-btprh --tail=5 | jq -c &#39;. | {&amp;quot;index&amp;quot;: {}}, .&#39; | curl https://es.denniswebb.info/logs/nginx/_bulk --data-bin @-
+
+{&amp;quot;took&amp;quot;:6,&amp;quot;errors&amp;quot;:false,&amp;quot;items&amp;quot;:[{&amp;quot;index&amp;quot;:{&amp;quot;_index&amp;quot;:&amp;quot;logs&amp;quot;,&amp;quot;_type&amp;quot;:&amp;quot;nginx&amp;quot;,&amp;quot;_id&amp;quot;:&amp;quot;AWCyakfRf8Ywf7A3rumH&amp;quot;,&amp;quot;_version&amp;quot;:1,&amp;quot;result&amp;quot;:&amp;quot;created&amp;quot;,&amp;quot;_shards&amp;quot;:{&amp;quot;total&amp;quot;:2,&amp;quot;successful&amp;quot;:2,&amp;quot;failed&amp;quot;:0},&amp;quot;created&amp;quot;:true,&amp;quot;status&amp;quot;:201}},{&amp;quot;index&amp;quot;:{&amp;quot;_index&amp;quot;:&amp;quot;logs&amp;quot;,&amp;quot;_type&amp;quot;:&amp;quot;nginx&amp;quot;,&amp;quot;_id&amp;quot;:&amp;quot;AWCyakfRf8Ywf7A3rumI&amp;quot;,&amp;quot;_version&amp;quot;:1,&amp;quot;result&amp;quot;:&amp;quot;created&amp;quot;,&amp;quot;_shards&amp;quot;:{&amp;quot;total&amp;quot;:2,&amp;quot;successful&amp;quot;:2,&amp;quot;failed&amp;quot;:0},&amp;quot;created&amp;quot;:true,&amp;quot;status&amp;quot;:201}},{&amp;quot;index&amp;quot;:{&amp;quot;_index&amp;quot;:&amp;quot;logs&amp;quot;,&amp;quot;_type&amp;quot;:&amp;quot;nginx&amp;quot;,&amp;quot;_id&amp;quot;:&amp;quot;AWCyakfRf8Ywf7A3rumJ&amp;quot;,&amp;quot;_version&amp;quot;:1,&amp;quot;result&amp;quot;:&amp;quot;created&amp;quot;,&amp;quot;_shards&amp;quot;:{&amp;quot;total&amp;quot;:2,&amp;quot;successful&amp;quot;:2,&amp;quot;failed&amp;quot;:0},&amp;quot;created&amp;quot;:true,&amp;quot;status&amp;quot;:201}},{&amp;quot;index&amp;quot;:{&amp;quot;_index&amp;quot;:&amp;quot;logs&amp;quot;,&amp;quot;_type&amp;quot;:&amp;quot;nginx&amp;quot;,&amp;quot;_id&amp;quot;:&amp;quot;AWCyakfRf8Ywf7A3rumK&amp;quot;,&amp;quot;_version&amp;quot;:1,&amp;quot;result&amp;quot;:&amp;quot;created&amp;quot;,&amp;quot;_shards&amp;quot;:{&amp;quot;total&amp;quot;:2,&amp;quot;successful&amp;quot;:2,&amp;quot;failed&amp;quot;:0},&amp;quot;created&amp;quot;:true,&amp;quot;status&amp;quot;:201}},{&amp;quot;index&amp;quot;:{&amp;quot;_index&amp;quot;:&amp;quot;logs&amp;quot;,&amp;quot;_type&amp;quot;:&amp;quot;nginx&amp;quot;,&amp;quot;_id&amp;quot;:&amp;quot;AWCyakfRf8Ywf7A3rumL&amp;quot;,&amp;quot;_version&amp;quot;:1,&amp;quot;result&amp;quot;:&amp;quot;created&amp;quot;,&amp;quot;_shards&amp;quot;:{&amp;quot;total&amp;quot;:2,&amp;quot;successful&amp;quot;:2,&amp;quot;failed&amp;quot;:0},&amp;quot;created&amp;quot;:true,&amp;quot;status&amp;quot;:201}}]}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
