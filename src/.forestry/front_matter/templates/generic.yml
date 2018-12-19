@@ -13,6 +13,7 @@ fields:
   name: date
   config:
     required: true
+    time_format: " "
 - type: tag_list
   label: Tags
   name: tags
