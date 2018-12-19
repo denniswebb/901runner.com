@@ -16,6 +16,15 @@ main {
     max-width: 750px;
 }
 
+table {
+    border-collapse:collapse;
+    border:1px solid #FF0000;
+}
+
+table td {
+    border:1px solid #FF0000;
+}
+
 /*footer*/
 
 .copyright {
