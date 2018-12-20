@@ -22,3 +22,5 @@ fields:
 - type: tag_list
   label: Tags
   name: tags
+pages:
+- src/content/log/2018-12-18-tuesday.md
