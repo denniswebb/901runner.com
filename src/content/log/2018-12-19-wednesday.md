@@ -1,6 +1,6 @@
 +++
 date = "2018-12-19T00:00:00-06:00"
-description = "Pyramid 1,2,3,4,4,3,2,1"
+description = "Easy 6"
 tags = []
 title = "2018-12-19 Wednesday"
 
